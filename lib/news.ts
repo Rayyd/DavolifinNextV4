@@ -12,10 +12,11 @@ export type NewsItem = {
 
 type FeedSource = { source: string; url: string; language: 'fr'|'nl'|'en'|'en+fr'; enabled: boolean }
 
-export const SOURCES: FeedSource[] = [
+export const SOURCES = [
   { source: 'ECB Press', url: 'https://www.ecb.europa.eu/press/pr/date/rss.en.html', language: 'en', enabled: true },
   { source: 'SPF Finances', url: 'https://finances.belgium.be/fr/Actualites/rss.xml', language: 'fr', enabled: true },
-  { source: 'L\'Echo', url: 'https://www.lecho.be/rss/top_stories.xml', language: 'fr', enabled: true },
+  { source: "L'Echo", url: 'https://www.lecho.be/rss/top_stories.xml', language: 'fr', enabled: true },
+  // { source: 'Ton flux', url: 'https://exemple.com/rss.xml', language: 'fr', enabled: false },
 ]
 
 export async function getNews({ maxPerSource = 5 } = {}): Promise<NewsItem[]>{
